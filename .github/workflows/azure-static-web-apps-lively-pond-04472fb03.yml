@@ -1,5 +1,10 @@
 name: Azure Static Web Apps CI/CD
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 on:
   workflow_dispatch: # Allows you to run this workflow manually, just in case
   push:
