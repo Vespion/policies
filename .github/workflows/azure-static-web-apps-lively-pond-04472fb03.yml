@@ -1,11 +1,19 @@
 name: Azure Static Web Apps CI/CD
 
 on:
+  workflow_dispatch: # Allows you to run this workflow manually, just in case
   push:
+    # Since the end output is static with no javascript etc we don't care if dependencies are changed until the actual sources change
+    paths:
+      - 'src/**'
+      - 'public/**'
     branches:
       - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
+    paths:
+      - 'src/**'
+      - 'public/**'
     branches:
       - main
 
@@ -15,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: false
           lfs: false
