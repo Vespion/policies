@@ -1,0 +1,97 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="A repositories of the policies used by Vespion Softworks and it's Projects" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		/* Primary: Sweet Desire */
+		--primary-100: #FDF2FF;
+		--primary-200: #F4C5FF;
+		--primary-300: #E397FC;
+		--primary-400: #CA68F5;
+		--primary-500: #A83AE8;
+		--primary-600: #7419B8;
+		--primary-700: #4B0A87;
+		--primary-800: #2A0557;
+		--primary-900: #100226;
+
+		/* Accent: Kiwi Green */
+		--accent-100: #F4FFF2;
+		--accent-200: #D3FFC9;
+		--accent-300: #B6FB9E;
+		--accent-400: #9AF372;
+		--accent-500: #80E346;
+		--accent-600: #60B423;
+		--accent-700: #498512;
+		--accent-800: #33550A;
+		--accent-900: #192604;
+
+		/* Neutral */
+		--neutral-100: #FCFAFC;
+		--neutral-200: #EBE7EC;
+		--neutral-300: #DAD5DB;
+		--neutral-400: #C8C3CB;
+		--neutral-500: #B7B1BA;
+		--neutral-600: #928C95;
+		--neutral-700: #6C6870;
+		--neutral-800: #48454B;
+		--neutral-900: #242226;
+		
+
+		--header-color: var(--primary-500);
+		--subheader-color: var(--primary-400);
+		--subtitle-color: var(--primary-300);
+		--policy-text-color: var(--primary-900);
+		--policy-background-color: var(--neutral-200);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: var(--policy-background-color);
+	}
+
+	h1, h2, h3 {
+		color: var(--header-color);
+	}
+
+	h1 {
+		font-size: xx-large;
+	}
+
+	h2 {
+		font-size: x-large;
+	}
+
+	h3 {
+		font-size: large;
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

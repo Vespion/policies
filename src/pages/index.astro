@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Toc from "../components/Toc.astro";
+---
+
+<Layout title="Vespion Policies">
+	<main>
+		<h1>Vespion Softworks Policy Repository</h1>
+		<p>This site contains the policies used by vespion softworks and related projects such as privacy and terms of use policies.</p>
+		<p>It is intended that consumers will directly link to the requested policy instead of using this site, as such it is not optimised for human use.</p>
+		<br/>
+		<Toc 
+			title="Policy Index"
+			headers={
+				[
+					{
+						title: "Ficverse",
+						items: [
+							{
+								title: "Privacy Policy",
+								link: "/ficverse/privacy"
+							}
+						]
+					}
+				]
+			}
+		/>
+	</main>
+</Layout>

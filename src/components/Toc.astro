@@ -1,0 +1,53 @@
+---
+interface ContentsEntry {
+	title: string;
+	link: string;
+}
+
+interface HeaderEntry {
+	title: string;
+	link?: string;
+	items: ContentsEntry[];
+}
+
+interface Props {
+	title: string;
+	headers: HeaderEntry[];
+}
+
+const { title, headers } = Astro.props;
+---
+
+<style>
+.toc-list, .toc-list ol {
+	list-style-type: none;
+}
+
+.toc-list {
+	padding: 0;
+}
+
+.toc-list ol {
+	padding-inline-start: 2ch;
+}
+</style>
+
+<h3>{title}</h3>
+<ol class="toc-list" role="list">
+	{headers.map(({ title, link, items }) => (
+		<li>
+			<a href={link}>
+				<span style="font-size: medium;" class="title">{title}</span>
+			</a>
+			<ol role="list">
+				{items.map(({ title, link }) => (
+					<li>
+						<a href={link}>
+							<span style="font-size: medium;" class="title">{title}</span>
+						</a>
+					</li>
+				))}
+			</ol>
+		</li>
+	))}
+</ol>
