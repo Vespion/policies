@@ -6,15 +6,15 @@ settings:
 
 dependencies:
   astro:
-    specifier: ^4.2.4
+    specifier: 4.2.4
     version: 4.2.4(typescript@5.3.3)
 
 devDependencies:
   '@astrojs/check':
-    specifier: ^0.4.1
+    specifier: 0.4.1
     version: 0.4.1(typescript@5.3.3)
   typescript:
-    specifier: ^5.3.3
+    specifier: 5.3.3
     version: 5.3.3
 
 packages:
